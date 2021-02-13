@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#img-container {
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 100vw;
+    height: 100vh;
+
+    transform-style: preserve-3d;
+}
+
+.panels {
+    height: 8.4vh;
+    width: 6.25vw;
+    overflow: hidden;
+
+    animation: drop 10s 1 normal linear;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+    0% {
+        transform: scale(3);
+        visibility: visible;
+        z-index: 1;
+    }
+    10% {
+        transform: scale(0.5);
+        visibility: visible;
+        z-index: 0;
+    }
+    25% {
+        transform: scale(1);
+        visibility: visible;
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
